@@ -40,19 +40,19 @@ while run:
     pygame.draw.rect(window, pygame.Color("Black"), (50, 50, 900, 450))
 
     #Create buttons
-    bubble_sort_button = Button(pygame.Color("Grey"), "Bubble Sort", font, 130, 575, True, window)
-    selection_sort_button = Button(pygame.Color("Grey"), "Selection Sort", font, 370, 575, True, window)
-    insertion_sort_button = Button(pygame.Color("Grey"), "Insertion Sort", font, 650, 575, True, window)
-    bogo_sort_button = Button(pygame.Color("Grey"), "Bogo Sort", font, 880, 574, True, window)
+    bubble_sort_button = Button("Bubble Sort", pygame.Color("Grey"), font, 130, 575, True, window)
+    selection_sort_button = Button("Selection Sort", pygame.Color("Grey"), font, 370, 575, True, window)
+    insertion_sort_button = Button("Insertion Sort", pygame.Color("Grey"), font, 650, 575, True, window)
+    bogo_sort_button = Button("Bogo Sort", pygame.Color("Grey"), font, 880, 574, True, window)
 
-    increase_button = Button(pygame.Color("Grey"), "Increase", font, WIDTH // 2 + 100, 625, True, window)
-    decrease_button = Button(pygame.Color("Grey"), "Decrease", font, WIDTH // 2 - 100, 625, True, window)
+    increase_button = Button("Increase", pygame.Color("Grey"), font, WIDTH // 2 + 100, 625, True, window)
+    decrease_button = Button("Decrease", pygame.Color("Grey"), font, WIDTH // 2 - 100, 625, True, window)
     
-    slower_button = Button(pygame.Color("Yellow"), "Slower", font, WIDTH // 2 - 150, 680, True, window)
-    stop_button = Button(pygame.Color("Red"), "Stop", font, WIDTH // 2, 680, True, window)
-    faster_button = Button(pygame.Color("Green"), "Faster", font, WIDTH // 2 + 150, 680, True, window)
+    slower_button = Button("Slower", pygame.Color("Yellow"), font, WIDTH // 2 - 150, 680, True, window)
+    stop_button = Button("Stop", pygame.Color("Red"), font, WIDTH // 2, 680, True, window)
+    faster_button = Button("Faster", pygame.Color("Green"), font, WIDTH // 2 + 150, 680, True, window)
 
-    reset_button = Button(pygame.Color("Grey"), "Reset", font, 10, HEIGHT - 40, False, window)
+    reset_button = Button("Reset", pygame.Color("Grey"), font, 10, HEIGHT - 40, False, window)
 
     #Show sort type being done
     if sort_type:
