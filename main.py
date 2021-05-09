@@ -15,6 +15,7 @@ pygame.init()
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Sorting Algorithms Visualizer')
 clock = pygame.time.Clock()
+font = pygame.font.SysFont(None, 50)
 
 #Create variables used in run loop
 list = List()
@@ -25,7 +26,6 @@ sort_type = ""
 speed = 10
 
 run = True
-font = pygame.font.SysFont(None, 50)
 
 while run:
     current_ticks += 1
@@ -57,9 +57,6 @@ while run:
     #Show sort type being done
     if sort_type:
         sort_type_text = TextBox(sort_type.capitalize() + "Sort", pygame.Color("Grey"), font, WIDTH // 2,  25, True, window)
-
-    #Draw test element
-    #pygame.draw.rect(window, pygame.Color("White"), (bottom_left[0] + 800, bottom_left[1] - 450, 100, 450))
     
     #Draw list
     list.display_list(window, bottom_left_pos, MAX_ELEMENT_HEIGHT, MAX_LIST_WIDTH)
@@ -68,7 +65,7 @@ while run:
     for event in event_list:
         if event.type == pygame.QUIT:
             run = False
-        elif event.type == pygame.MOUSEBUTTONDOWN:
+        elif event.type == pygame.MOUSEBUTTONDOWN: #Respond to button presses
             if bubble_sort_button.is_clicked(event.pos):
                 sort_type = "bubble"
             elif selection_sort_button.is_clicked(event.pos):
@@ -103,6 +100,7 @@ while run:
                 list.decrease_size()
 
     
+    #Run sorting algorithm
     if sort_type and not list.sorted and current_ticks % speed == 0:
         if sort_type == "bubble":
             list.bubble_sort(is_first_run)
