@@ -105,10 +105,6 @@ class List:
         if self.step == self.length - self.n_passes - 1:
             self.step = 0
             self.n_passes += 1
-        
-        
-        # print("index1 = " + str(self.index1) + " index2 = " + str(self.index2), end="")
-        # print(self.list)
 
     def selection_sort(self, is_first_run):
         """This function completes one step of the selection sort algorithm
@@ -171,17 +167,26 @@ class List:
             self.red_index = []
 
     def bogo_sort(self):
+        """Completes one step of the bogo sort algorithm
+        """
         if not self.is_sorted():
             self.shuffle()
             self.tried_lists.append(self.list)
 
     def is_sorted(self):
+        """This is a helper function for bogo sort. It returns if self.list is sorted in increasing order
+
+        Returns:
+            bool: returns if the list is true or not
+        """
         for i in range(self.length - 1):
             if self.list[i] > self.list[i + 1]:
                 return False
         return True
 
     def shuffle(self):
+        """This is a helper function for bogo sort. It randomly shuffles self.list
+        """
         for i in range(self.length):
             self.swap(i, random.randint(0, self.length - 1))
 
